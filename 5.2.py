@@ -8,10 +8,6 @@ You will also program three functions that determine if the number is divisible 
 
 You will have a final function that puts output on the screen - identifying if the number is divisible by two, three, and five.
 """
-number = 0
-def validate(num):
-    print()
-
 def div2(num):
     if num % 2 == 0:
         print(str(num) + " is divisible by 2")
@@ -27,9 +23,21 @@ def div5(num):
         print(str(num) + " is divisible by 5")
     else:
         print(str(num) + " isn't divisible by 5")
-while number < 20 or number > 100:
-    number = int(input("Enter a whole number between 20 and 100."))
-    if 20 <= number <= 100:
-        div2(number)
-        div3(number)
-        div5(number)
+def validate_num(num):
+    if 20 <= num <= 100:
+        return True
+    else:
+        return False
+
+
+
+def final():
+    good_number = False
+    while good_number == False:
+        number = int(input("Enter a whole number between 20 and 100."))
+        good_number = validate_num(number)
+        if good_number == True:
+            div2(number)
+            div3(number)
+            div5(number)
+final()
