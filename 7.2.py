@@ -13,7 +13,7 @@ def main():
         for item in range(0, len(normal)):
             if letter.upper() == normal[item]:
                 changed += code[item] + "\n"
-                file.write(code[item])
+                file.write(code[item] + '\n')
 
     print(changed)
 main()
